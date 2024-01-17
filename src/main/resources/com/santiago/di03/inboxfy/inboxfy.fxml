@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.HTMLEditor?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="900.0" prefHeight="730.0" prefWidth="1000.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.santiago.di03.inboxfy.controlador.inboxfyController">
+   <children>
+      <MenuBar layoutX="46.0" layoutY="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem fx:id="menuItemAbrir" mnemonicParsing="false" text="Abrir">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true" styleClass="img-small">
+                           <image>
+                              <Image url="@img/abrir archivo/1x/baseline_file_open_black_24dp.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+                  <MenuItem fx:id="menuItemGuardar" mnemonicParsing="false" text="Guardar">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true" styleClass="img-small">
+                           <image>
+                              <Image url="@img/guardar/1x/baseline_save_black_24dp.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="menuItemGuardarComo" mnemonicParsing="false" text="Guardar como...">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true" styleClass="img-small">
+                           <image>
+                              <Image url="@img/guardar como/1x/baseline_save_as_black_24dp.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="menuItemImprimir" mnemonicParsing="false" text="Imprimir">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true" styleClass="img-small">
+                           <image>
+                              <Image url="@img/impresora/1x/baseline_print_black_24dp.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="menuItemCerrar" mnemonicParsing="false" text="Cerrar">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true" styleClass="img-small">
+                           <image>
+                              <Image url="@img/cerrar/1x/baseline_close_black_24dp.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Editar">
+            <items>
+              <MenuItem fx:id="menuItemSeleccionarTodo" mnemonicParsing="false" text="Seleccionar todo">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/seleccionar todo/1x/baseline_select_all_black_24dp.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="menuItemCopiar" mnemonicParsing="false" text="Copiar">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/copiar/1x/baseline_content_copy_black_24dp.png" />
+                           </image></ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="menuItemCortar" mnemonicParsing="false" text="Cortar">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/cortar/1x/baseline_content_cut_black_24dp.png" />
+                           </image></ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem fx:id="menuItemPegar" mnemonicParsing="false" text="Pegar">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true" styleClass="img-small">
+                           <image>
+                              <Image url="@img/pegar/1x/baseline_content_paste_black_24dp.png" />
+                           </image></ImageView>
+                     </graphic>
+                  </MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ayuda">
+            <items>
+              <MenuItem fx:id="menuItemAcercaDe" mnemonicParsing="false" text="Acerca de">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true" styleClass="img-small">
+                           <image>
+                              <Image url="@img/info/1x/baseline_info_black_24dp.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TabPane layoutY="27.0" prefHeight="146.0" prefWidth="1042.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <tabs>
+          <Tab text="Inicio">
+            <content>
+                  <HBox prefHeight="21.0" prefWidth="1042.0" styleClass="hbox-ribbon-menu">
+                     <children>
+                        <AnchorPane prefHeight="105.0" prefWidth="256.0">
+                           <children>
+                              <Button fx:id="btnNuevoEmail" contentDisplay="TOP" minWidth="61.0" mnemonicParsing="false" onAction="#notImplemented_onClicked" prefHeight="80.0" prefWidth="68.0" styleClass="boton-gris-rounded" text="Nuevo" textAlignment="CENTER">
+                                 <graphic>
+                                    <ImageView pickOnBounds="true" preserveRatio="true" styleClass="img-big">
+                                       <image>
+                                          <Image url="@img/email/new/2x/mail_FILL0_wght400_GRAD0_opsz48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Nuevo" />
+                                 </tooltip>
+                              </Button>
+                              <Label layoutX="113.0" layoutY="91.0" styleClass="texto-descripcion-seccion" text="Email" AnchorPane.bottomAnchor="0.0" />
+                              <Button fx:id="btnResponderEmail" contentDisplay="TOP" layoutX="80.0" minWidth="61.0" mnemonicParsing="false" onAction="#notImplemented_onClicked" prefHeight="80.0" prefWidth="95.0" styleClass="boton-gris-rounded" text="Responder" textAlignment="CENTER">
+                                 <graphic>
+                                    <ImageView pickOnBounds="true" preserveRatio="true" styleClass="img-big">
+                                       <image>
+                                          <Image url="@img/email/reply/2x/reply_FILL0_wght400_GRAD0_opsz48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Responder" />
+                                 </tooltip>
+                              </Button>
+                              <Button fx:id="btnBorrarEmail" contentDisplay="TOP" layoutX="187.0" minWidth="61.0" mnemonicParsing="false" onAction="#notImplemented_onClicked" prefHeight="80.0" prefWidth="70.0" styleClass="boton-gris-rounded" text="Borrar" textAlignment="CENTER">
+                                 <graphic>
+                                    <ImageView pickOnBounds="true" preserveRatio="true" styleClass="img-big">
+                                       <image>
+                                          <Image url="@img/email/trash/2x/delete_FILL0_wght400_GRAD0_opsz48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Borrar" />
+                                 </tooltip>
+                              </Button>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+                           </HBox.margin>
+                        </AnchorPane>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" />
+                        <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="105.0" prefWidth="230.0">
+                           <children>
+                              <Label layoutX="36.0" layoutY="91.0" styleClass="texto-descripcion-seccion" text="Actualizar bandeja de entrada" AnchorPane.bottomAnchor="0.0" />
+                              <Button fx:id="btnSincronizarEmails" contentDisplay="TOP" minWidth="61.0" mnemonicParsing="false" onAction="#notImplemented_onClicked" prefHeight="80.0" prefWidth="99.0" styleClass="boton-gris-rounded" text="Sincronizar" textAlignment="CENTER">
+                                 <graphic>
+                                    <ImageView pickOnBounds="true" preserveRatio="true" styleClass="img-big">
+                                       <image>
+                                          <Image url="@img/email/sync/2x/sync_FILL0_wght400_GRAD0_opsz48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Sincronizar" />
+                                 </tooltip>
+                              </Button>
+                              <Button fx:id="btnSincronizarSoloFavoritos" contentDisplay="TOP" layoutX="111.0" minWidth="61.0" mnemonicParsing="false" onAction="#notImplemented_onClicked" prefHeight="80.0" prefWidth="115.0" styleClass="boton-gris-rounded" text="Solo favoritos" textAlignment="CENTER">
+                                 <graphic>
+                                    <ImageView pickOnBounds="true" preserveRatio="true" styleClass="img-big">
+                                       <image>
+                                          <Image url="@img/email/fav/2x/star_FILL0_wght400_GRAD0_opsz48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Solo favoritos" />
+                                 </tooltip>
+                              </Button>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+                           </HBox.margin>
+                        </AnchorPane>
+                        <Separator layoutX="419.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                        <AnchorPane layoutX="440.0" layoutY="15.0" prefHeight="105.0" prefWidth="69.0">
+                           <children>
+                              <Label layoutX="9.0" layoutY="91.0" styleClass="texto-descripcion-seccion" text="Busqueda" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="9.0" />
+                              <Button fx:id="btnBuscar" contentDisplay="TOP" layoutX="22.0" layoutY="14.0" minWidth="61.0" mnemonicParsing="false" onAction="#notImplemented_onClicked" prefHeight="80.0" prefWidth="69.0" styleClass="boton-gris-rounded" text="Buscar" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <graphic>
+                                    <ImageView pickOnBounds="true" preserveRatio="true" styleClass="img-big">
+                                       <image>
+                                          <Image url="@img/busqueda/2x/baseline_search_black_24dp.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Buscar en el documento" />
+                                 </tooltip>
+                              </Button>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+                           </HBox.margin>
+                        </AnchorPane>
+                        <Separator layoutX="799.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                     </children>
+                  </HBox>
+            </content>
+          </Tab>
+            <Tab text="Ver">
+               <content>
+                  <HBox prefHeight="21.0" prefWidth="1042.0" styleClass="hbox-ribbon-menu">
+                     <children>
+                        <AnchorPane prefHeight="79.0" prefWidth="120.0">
+                           <children>
+                              <Button fx:id="btnZoomAcercar" contentDisplay="TOP" minWidth="61.0" mnemonicParsing="false" onAction="#notImplemented_onClicked" prefHeight="80.0" prefWidth="74.0" styleClass="boton-gris-rounded" text="Acercar" textAlignment="CENTER">
+                                 <graphic>
+                                    <ImageView pickOnBounds="true" preserveRatio="true" styleClass="img-big">
+                                       <image>
+                                          <Image url="@img/zoom in/2x/baseline_zoom_in_black_24dp.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Acercar zoom" />
+                                 </tooltip>
+                              </Button>
+                              <Label layoutX="107.0" layoutY="91.0" styleClass="texto-descripcion-seccion" text="Zoom" AnchorPane.bottomAnchor="0.0" />
+                              <Button fx:id="btnZoomAlejar" contentDisplay="TOP" layoutX="85.0" minWidth="61.0" mnemonicParsing="false" onAction="#notImplemented_onClicked" prefHeight="80.0" prefWidth="74.0" styleClass="boton-gris-rounded" text="Alejar" textAlignment="CENTER">
+                                 <graphic>
+                                    <ImageView pickOnBounds="true" preserveRatio="true" styleClass="img-big">
+                                       <image>
+                                          <Image url="@img/zoom in/2x/baseline_zoom_in_black_24dp.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Alejar zoom" />
+                                 </tooltip>
+                              </Button>
+                              <Button fx:id="btnZoom100x100" contentDisplay="TOP" layoutX="170.0" minWidth="61.0" mnemonicParsing="false" onAction="#notImplemented_onClicked" prefHeight="80.0" prefWidth="74.0" styleClass="boton-gris-rounded" text="100%" textAlignment="CENTER">
+                                 <graphic>
+                                    <ImageView pickOnBounds="true" preserveRatio="true" styleClass="img-big">
+                                       <image>
+                                          <Image url="@img/zoom 100x100/2x/baseline_fit_screen_black_24dp.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Zoom 100%" />
+                                 </tooltip>
+                              </Button>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+                           </HBox.margin>
+                        </AnchorPane>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" />
+                        <AnchorPane layoutX="25.0" layoutY="15.0" prefHeight="105.0" prefWidth="182.0">
+                           <children>
+                              <Label layoutX="46.0" layoutY="91.0" styleClass="texto-descripcion-seccion" text="Mostrar u ocultar" AnchorPane.bottomAnchor="0.0" />
+                              <CheckBox fx:id="checkBoxRegla" layoutY="5.0" mnemonicParsing="false" selected="true" text="Regla" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <tooltip>
+                                    <Tooltip text="Regla" />
+                                 </tooltip>
+                              </CheckBox>
+                              <CheckBox fx:id="checkBoxBarraEstado" layoutY="24.0" mnemonicParsing="false" selected="true" text="Barra de estado">
+                                 <tooltip>
+                                    <Tooltip text="Barra de estado" />
+                                 </tooltip>
+                              </CheckBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+                           </HBox.margin>
+                        </AnchorPane>
+                        <Separator layoutX="171.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                     </children>
+                  </HBox>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <BorderPane layoutY="173.0" prefHeight="530.0" prefWidth="1000.0" AnchorPane.bottomAnchor="27.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="173.0">
+         <left>
+            <!-- Aquí va tu ListView de la bandeja de entrada -->
+            <ListView fx:id="inboxListView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="248.0">
+               <BorderPane.margin>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </BorderPane.margin></ListView>
+         </left>
+         <center>
+            <VBox BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <children>
+                  <ButtonBar prefHeight="40.0" prefWidth="242.0" styleClass="back-barra-estado">
+                    <buttons>
+                        <Button fx:id="btnEnviar" mnemonicParsing="false" styleClass="boton-gris-rounded" text="Enviar">
+                           <graphic>
+                              <ImageView pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/email/send/1x/send_FILL0_wght400_GRAD0_opsz24.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Enviar" />
+                           </tooltip>
+                        </Button>
+                    </buttons>
+                  </ButtonBar>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="De" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <TextField fx:id="txtRemitente" layoutX="80.0" layoutY="2.0" prefHeight="24.0" prefWidth="661.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="0.0" />
+                        <Label layoutX="15.0" layoutY="35.0" text="Para" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="35.0" />
+                        <TextField fx:id="txtDestinatario" layoutX="80.0" layoutY="36.0" prefHeight="24.0" prefWidth="661.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="0.0" />
+                        <Label layoutX="15.0" layoutY="75.0" text="Asunto" />
+                        <TextField fx:id="txtAsunto" layoutX="80.0" layoutY="71.0" prefHeight="24.0" prefWidth="661.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="67.0" />
+                        <ButtonBar layoutX="143.0" layoutY="95.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="517.0" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="0.0">
+                          <buttons>
+                            <Button fx:id="btnAdjuntarArchivos" mnemonicParsing="false" prefHeight="36.0" styleClass="boton-gris-rounded" text="Adjuntar">
+                                 <graphic>
+                                    <ImageView pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/añadir/1x/baseline_add_black_24dp.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Adjuntar archivo" />
+                                 </tooltip></Button>
+                          </buttons>
+                        </ButtonBar>
+                        <Label layoutX="2.0" layoutY="109.0" text="Archivos adjuntos" AnchorPane.leftAnchor="0.0" />
+                        <HTMLEditor fx:id="htmlEmailEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="30.0" layoutY="137.0" prefHeight="353.0" prefWidth="720.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="132.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+                     </padding>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+      <AnchorPane layoutX="182.0" layoutY="616.0" maxHeight="-Infinity" prefHeight="27.0" prefWidth="1042.0" styleClass="back-barra-estado" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Slider layoutX="852.0" layoutY="6.0" value="30.0" AnchorPane.rightAnchor="50.0" />
+            <Label layoutX="996.0" layoutY="6.0" text="100%" AnchorPane.rightAnchor="8.0" />
+            <Button mnemonicParsing="false" styleClass="boton-gris" text="Español (España)" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
